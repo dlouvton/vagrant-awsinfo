@@ -71,7 +71,7 @@ module VagrantAwsInfo
                 fog_config[:aws_secret_access_key] = region_config.secret_access_key
             end
 
-            fog_config[:endpoint] = region_config.endpoint if region_config.endpoint
+            fog_config[:endpoint] = 'http://10.224.57.7/ec2/'
             fog_config[:version]  = region_config.version if region_config.version
             env[:aws_compute] = Fog::Compute.new(fog_config)
             return env
